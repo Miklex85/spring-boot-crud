@@ -12,7 +12,7 @@ LABEL io.k8s.description="Ejemplo de Despliegue con Docker File de una Spring Bo
 RUN mkdir -p /tmp/src/
 ADD . /tmp/src/
 
-RUN cd /tmp/src && sh mvnw package
+RUN cd /tmp/src && sh mvnw package -DskipTests=true
 
 RUN cp -a  /tmp/src/target/spring-boot-crud.jar /deployments/spring-boot-crud.jar
 
