@@ -11,21 +11,21 @@ import org.springframework.validation.BindingResult;
 
 import mx.edu.ittoluca.flisol.crud.controllers.UserController;
 import mx.edu.ittoluca.flisol.crud.entities.User;
-import mx.edu.ittoluca.flisol.crud.repositories.UserRepository;
+import mx.edu.ittoluca.flisol.crud.services.UserService;
 
 public class UserControllerUnitTest {
 
     private static UserController userController;
-    private static UserRepository mockedUserRepository;
+    private static UserService mockedUserService;
     private static BindingResult mockedBindingResult;
     private static Model mockedModel;
 
     @BeforeClass
     public static void setUpUserControllerInstance() {
-        mockedUserRepository = mock(UserRepository.class);
+    	mockedUserService = mock(UserService.class);
         mockedBindingResult = mock(BindingResult.class);
         mockedModel = mock(Model.class);
-        userController = new UserController(mockedUserRepository);
+        userController = new UserController(mockedUserService);
     }
 
     @Test
