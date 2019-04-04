@@ -12,10 +12,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @NotBlank(message = "Name is mandatory")
+    @NotBlank(message = "El nombre es requerido")
     private String name;
     
-    @NotBlank(message = "Email is mandatory")
+    @NotBlank(message = "El email es requerido")
     private String email;
 
     public User() {}
